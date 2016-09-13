@@ -1,0 +1,8 @@
+** TODO autogen.sh file
+** TODO configure.ac file
+** TODO Initial code base
+** TODO gluster-restapi CLI
+** TODO Usage Doc
+** TODO API Doc
+** TODO Documentation as github pages repo
+
