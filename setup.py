@@ -14,10 +14,10 @@ if "--gluster-libexecdir" in sys.argv:
     sys.argv.remove(gluster_libexecdir_value)
 
 glusterd_workdir_value = "/var/lib/glusterd"
-if "--glusterddir" in sys.argv:
-    idx = sys.argv.index("--glusterddir")
+if "--glusterd-workdir" in sys.argv:
+    idx = sys.argv.index("--glusterd-workdir")
     glusterd_workdir_value = sys.argv[idx+1]
-    sys.argv.remove("--glusterddir")
+    sys.argv.remove("--glusterd-workdir")
     sys.argv.remove(glusterd_workdir_value)
 
 
