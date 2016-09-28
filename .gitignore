@@ -1,0 +1,6 @@
+glusterrest.egg-info
+build
+dist
+*.pyc
+*.pyo
+conf.py

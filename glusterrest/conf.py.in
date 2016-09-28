@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+#
+#  Copyright (c) 2016 Red Hat, Inc. <http://www.redhat.com>
+#  This file is part of GlusterFS.
+#
+#  This file is licensed to you under your choice of the GNU Lesser
+#  General Public License, version 3 or any later version (LGPLv3 or
+#  later), or the GNU General Public License, version 2 (GPLv2), in all
+#  cases as published by the Free Software Foundation.
+#
+
+GLUSTERFS_LIBEXECDIR = "@GLUSTERFS_LIBEXECDIR@"
+GLUSTERD_WORKDIR = "@GLUSTERD_WORKDIR@"
+DEFAULT_CONFIG_FILE = "/etc/glusterrest/config.json"
+CUSTOM_CONFIG_FILE_TO_SYNC = "/restapi/config.json"
+CUSTOM_CONFIG_FILE = GLUSTERD_WORKDIR + CUSTOM_CONFIG_FILE_TO_SYNC
+APPS_FILE_TO_SYNC = "/restapi/apps.json"
+APPS_FILE = GLUSTERD_WORKDIR + APPS_FILE_TO_SYNC
+LOG_FILE = "/var/log/glusterrest/rest.log"
+ACCESS_LOG_FILE = "/var/log/glusterrest/access.log"
+RESTD = "glusterrestd"
+CONFIG_KEYS = ["auth-enabled", "https", "port", "csr", "key", "log-level"]
+BOOL_CONFIGS = ["auth-enabled", "https"]
+INT_CONFIGS = ["port"]
+RESTART_CONFIGS = ["port", "https", "csr", "key"]
+PID_FILE = "/var/run/glusterrest.pid"

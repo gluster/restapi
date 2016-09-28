@@ -1,7 +1,7 @@
-** TODO autogen.sh file
-** TODO configure.ac file
-** TODO Initial code base
-** TODO gluster-restapi CLI
+** DONE Initial code base
+   CLOSED: [2016-09-28 Wed 20:53]
+** DONE gluster-restapi CLI
+   CLOSED: [2016-09-28 Wed 20:53]
 ** TODO Usage Doc
 ** TODO API Doc
 ** TODO Documentation as github pages repo

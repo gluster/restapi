@@ -1,0 +1,12 @@
+[Unit]
+Description=Gluster REST APIs
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecReload=/bin/kill -SIGHUP $MAINPID
+KillMode=control-group
+ExecStart=/usr/bin/gunicorn -c /etc/glusterrest/gunicorn_config.py glusterrest.main:app --pid /var/run/glusterrest.pid
+
+[Install]
+WantedBy=multi-user.target
