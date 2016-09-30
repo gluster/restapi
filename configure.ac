@@ -23,14 +23,14 @@ AC_SUBST(initdir)
 
 dnl Gluster Libexecdir Path
 AC_ARG_WITH(gluster_libexecdir,
-            [  --gluster-libexecdir=DIR Gluster Libexec @<:@PREFIX/libexec/glusterfs@:>@],
+            [  --with-gluster-libexecdir=DIR Gluster Libexec @<:@PREFIX/libexec/glusterfs@:>@],
             [gluster_libexecdir=$withval],
             [gluster_libexecdir='${prefix}/libexec/glusterfs'])
 AC_SUBST(gluster_libexecdir)
 
 dnl Glusterd workdir Path
 AC_ARG_WITH(glusterd_workdir,
-            [  --glusterd-workdir=DIR Glusterd Workdir @<:@/var/lib/glusterd@:>@],
+            [  --with-glusterd-workdir=DIR Glusterd Workdir @<:@/var/lib/glusterd@:>@],
             [glusterd_workdir=$withval],
             [glusterd_workdir='/var/lib/glusterd'])
 AC_SUBST(glusterd_workdir)

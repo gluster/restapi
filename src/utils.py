@@ -101,7 +101,7 @@ def get_app_secret(iss):
 def auth(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        if not _config.get("auth_enabled"):
+        if not _config.get("auth-enabled"):
             return func(*args, **kwargs)
 
         # Collect Authorization header, validate if format is different
