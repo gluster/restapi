@@ -1,0 +1,272 @@
+# API - Peer Attach
+- title: Peer Attach
+  group: Peers
+  id: peer-attach
+  method: PUT
+  url: /peers/:fqdn
+  query_params:
+    - name: fqdn
+      type: String
+      help: Host Name or IP
+      required: True
+  response:
+    status: 201 Created
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+# API - Peer Detach
+- title: Peer Detach
+  group: Peers
+  id: peer-detach
+  method: DELETE
+  url: /peers/:fqdn
+  query_params:
+    - name: fqdn
+      type: String
+      help: Host Name or IP
+      required: True
+  response:
+    status: 204 No Content
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+# API - Peers List
+- title: Peers List
+  group: Peers
+  id: peer-list
+  method: GET
+  url: /peers
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: PeersList
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Create Volume
+  group: Volumes
+  id: volume-create
+  method: PUT
+  url: /volumes/:name
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: bricks
+      type: "[String]"
+      help: Bricks
+      required: True
+
+    - name: replica
+      type: Int
+      required: False
+      help: Replica Count
+      default: 0
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: "volume create: gv1: success: please start the volume to access data"
+
+- title: Start Volume
+  group: Volumes
+  id: volume-start
+  method: POST
+  url: /volumes/:name/start
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: force
+      type: "Int"
+      help: Force Start the Volume
+      required: False
+      default: 0
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Stop Volume
+  group: Volumes
+  id: volume-stop
+  method: POST
+  url: /volumes/:name/stop
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: force
+      type: "Int"
+      help: Force Stop the Volume
+      required: False
+      default: 0
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Restart Volume
+  group: Volumes
+  id: volume-restart
+  method: POST
+  url: /volumes/:name/restart
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: force
+      type: Int
+      help: Force Restart the Volume
+      required: False
+      default: 0
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""    
+
+- title: Get Volume Options
+  group: Volumes
+  id: volume-options-get
+  method: GET
+  url: /volumes/:name/options
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+
+    - name: option
+      type: String
+      help: Option Name
+      required: False
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: "[Options]"
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Set Volume Options
+  group: Volumes
+  id: volume-options-set
+  method: POST
+  url: /volumes/:name/options
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: options
+      type: "[[String, String]]"
+      help: Options List
+      required: True
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Reset Volume Options
+  group: Volumes
+  id: volume-options-reset
+  method: DELETE
+  url: /volumes/:name/options
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  data_params:
+    - name: option
+      type: String
+      help: Option Name
+      required: True
+  response:
+    status: 200 OK
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""
+
+- title: Delete Volume
+  group: Volumes
+  id: volume-delete
+  method: DELETE
+  url: /volumes/:name
+  query_params:
+    - name: name
+      type: String
+      help: Volume Name
+      required: True
+  response:
+    status: 204 No Content
+    out:
+      error: String
+      errno: Int
+      output: String
+  example_output:
+    error: ""
+    errno: 0
+    output: ""

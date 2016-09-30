@@ -9,18 +9,20 @@
 #  cases as published by the Free Software Foundation.
 #
 
-GLUSTERFS_LIBEXECDIR = "@GLUSTERFS_LIBEXECDIR@"
-GLUSTERD_WORKDIR = "@GLUSTERD_WORKDIR@"
-DEFAULT_CONFIG_FILE = "/etc/glusterrest/config.json"
-CUSTOM_CONFIG_FILE_TO_SYNC = "/restapi/config.json"
+GLUSTER_LIBEXECDIR = "@GLUSTER_LIBEXECDIR@"
+GLUSTERD_WORKDIR = "@glusterd_workdir@"
+DEFAULT_CONFIG_FILE = "@SYSCONF_DIR@/glusterrest/config.json"
+CUSTOM_CONFIG_FILE_TO_SYNC = "/glusterrest/config.json"
 CUSTOM_CONFIG_FILE = GLUSTERD_WORKDIR + CUSTOM_CONFIG_FILE_TO_SYNC
-APPS_FILE_TO_SYNC = "/restapi/apps.json"
+APPS_FILE_TO_SYNC = "/glusterrest/apps.json"
 APPS_FILE = GLUSTERD_WORKDIR + APPS_FILE_TO_SYNC
 LOG_FILE = "/var/log/glusterrest/rest.log"
 ACCESS_LOG_FILE = "/var/log/glusterrest/access.log"
 RESTD = "glusterrestd"
-CONFIG_KEYS = ["auth-enabled", "https", "port", "csr", "key", "log-level"]
+CONFIG_KEYS = ["auth-enabled", "https", "port", "csr", "key", "log-level",
+               "num-workers"]
 BOOL_CONFIGS = ["auth-enabled", "https"]
-INT_CONFIGS = ["port"]
-RESTART_CONFIGS = ["port", "https", "csr", "key"]
+INT_CONFIGS = ["port", "num-workers"]
+RESTART_CONFIGS = ["num-workers"]
 PID_FILE = "/var/run/glusterrest.pid"
+VERSION = "/v1"

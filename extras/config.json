@@ -1,7 +1,8 @@
 {
-    "auth_enabled": true,
+    "auth-enabled": true,
     "https": false,
     "port": 8080,
     "csr": "/etc/glusterrest/server.csr",
-    "key": "/etc/glusterrest/server.key"
+    "key": "/etc/glusterrest/server.key",
+    "num-workers": 2
 }

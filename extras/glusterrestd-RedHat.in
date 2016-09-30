@@ -30,7 +30,7 @@ PIDFILE="${RUNDIR:-/var/run}/${BASE}.pid"
 PID=`test -f $PIDFILE && cat $PIDFILE`
 
 GLUSTERRESTD_BIN=/usr/bin/gunicorn
-GLUSTERRESTD_OPTS="-D -c /etc/glusterrest/gunicorn_config.py glusterrest.main:app --pid $PIDFILE"
+GLUSTERRESTD_OPTS="-D -c @SYSCONF_DIR@/glusterrest/gunicorn_config.py main:app --pid $PIDFILE --chdir @GLUSTER_LIBEXECDIR@/glusterrest/"
 GLUSTERRESTD="$GLUSTERRESTD_BIN $GLUSTERRESTD_OPTS"
 RETVAL=0
 

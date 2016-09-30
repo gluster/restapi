@@ -1,0 +1,11 @@
+import sys
+sys.path.insert(1, '@GLUSTER_LIBEXECDIR@/')
+
+from glusterrest.utils import get_config, load_config
+
+load_config()
+
+bind = ":" + str(get_config("port", 8080))
+workers = get_config("num_workers", 2)
+errorlog = "/var/log/glusterrest/errors.log"
+accesslog = "/var/log/glusterrest/access.log"

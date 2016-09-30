@@ -6,7 +6,8 @@ After=syslog.target network.target
 Type=simple
 ExecReload=/bin/kill -SIGHUP $MAINPID
 KillMode=control-group
-ExecStart=/usr/bin/gunicorn -c /etc/glusterrest/gunicorn_config.py glusterrest.main:app --pid /var/run/glusterrest.pid
+ExecStart=/usr/bin/gunicorn -c @SYSCONF_DIR@/glusterrest/gunicorn_config.py main:app --pid /var/run/glusterrest.pid --chdir @GLUSTER_LIBEXECDIR@/glusterrest
+PIDFile=/var/run/glusterrestd.pid
 
 [Install]
 WantedBy=multi-user.target

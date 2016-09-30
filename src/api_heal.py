@@ -1,0 +1,1 @@
+# volume heal <VOLNAME> [enable | disable | full |statistics [heal-count [replica <HOSTNAME:BRICKNAME>]] |info [healed | heal-failed | split-brain] |split-brain {bigger-file <FILE> | latest-mtime <FILE> |source-brick <HOSTNAME:BRICKNAME> [<FILE>]}] - self-heal commands on volume specified by <VOLNAME>

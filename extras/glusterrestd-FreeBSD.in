@@ -11,7 +11,7 @@ name="glusterrestd"
 rcvar=`set_rcvar`
 command=/usr/bin/gunicorn
 pidfile="/var/run/${name}.pid"
-glusterrestd_flags="-D -c /etc/glusterrest/gunicorn_config.py glusterrest.main:app --pid /var/run/${name}.pid"
+glusterrestd_flags="-D -c @SYSCONF_DIR@/glusterrest/gunicorn_config.py main:app --pid /var/run/${name}.pid --chdir @GLUSTER_LIBEXECDIR@/glusterrest"
 start_cmd="$command ${glusterrestd_flags}"
 
 load_rc_config $name
