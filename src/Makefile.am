@@ -11,7 +11,7 @@ restapiconf_DATA = gunicorn_config.py
 restapidir = $(gluster_libexecdir)/glusterrest
 restapi_PYTHON = api_bitrot.py api_georep.py api_logrotate.py api_quota.py \
 	api_tier.py __init__.py utils.py api_brick.py api_heal.py api_peer.py \
-	api_snapshot.py api_volume.py conf.py glusterrest.py
+	api_snapshot.py api_volume.py conf.py main.py
 
 restapipeerscriptdir = $(libexecdir)/glusterfs
 restapipeerscript_SCRIPTS = peer_restapi.py
